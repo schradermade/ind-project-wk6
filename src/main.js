@@ -10,25 +10,31 @@ function clearFields()  {
   $('#show-exchange').val("");
 }
 
-function getExchange(response)  {
-  let amount = $('#amount').val();
-  let factor = 
-  let convertAmount = amount * ${response.conversion_rates.}
-  if(response.conversion_rates) {
-    $("show-exchange").text(`Your ${amount} U.S. Dollars converts to ${}`)
+function getExchange(response, code, amount)  {
+  let convertCode = `${response.conversion_rates}.${code}`;
+  console.log(convertCode);
+  let convertAmount = `${convertCode} * ${amount}`;
+  console.log(convertAmount);
+  if (response.conversion_rates)  {
+    alert("it worked");
+    console.log(response);
+    $("#show-exchange").text(`Your $${amount} U.S. Dollars converts to ${convertAmount} ${}`);
+  } else  {
+    $('#show-errors').text(`There was an error: ${response.message}`);
   }
 }
 
 $(document).ready(function()  {
   $('#formOne').submit(function(event)  {
     event.preventDefault();
-    let code = $('#code').val();
     
+    let code = $('#code').val();
+    let amount = $('#amount').val();
     console.log(code);
     clearFields();
-    ExchangeRate.getRate(code)
+    ExchangeRate.getRate("USD")
       .then(function(response)  {
-        getExchange(response);
+        getExchange(response, code, amount);
       });
   });
 });
