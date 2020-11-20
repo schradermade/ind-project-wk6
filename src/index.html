@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TODO</title>
+  <title>Currency Exchange Rate</title>
 </head>
 <body>
-  <form id="triangle-checker-form">
-    <label for="TODO">TODO:</label>
-    <input id="TODO" type="TODO">
-    <button type="submit">Submit</button>
-  </form>
+  <div class="container">
+    <form id="form-one">
+      <label for="amount">Amount of Money to exchange:</label>
+      <input id="amount" type="text">
+      <select id="currency">
+        <p>Convert to:</p>
+        <option value="CHF">Swiss franc</option>
+        <option value="CAD">Canadian dollars</option>
+        <option value="MXN">Mexican peso</option>
+        <option value="CNY">Chinese yuan</option>
+        <option value="BTC">Bitcoin</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="showExchange"></div>
+  </div>
 </body>
 </html>
