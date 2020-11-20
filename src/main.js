@@ -6,17 +6,25 @@ import ExchangeRate from './js/exchange-service.js';
 
 function clearFields()  {
   $('#amount').val("");
-  $('#currency-code').val("");
+  $('#code').val("");
   $('#show-exchange').val("");
 }
 
 function getExchange(response)  {
+  let amount = $('#amount').val();
+  let factor = 
+  let convertAmount = amount * ${response.conversion_rates.}
+  if(response.conversion_rates) {
+    $("show-exchange").text(`Your ${amount} U.S. Dollars converts to ${}`)
+  }
 }
 
-
 $(document).ready(function()  {
-  $('form-one').click(function()  {
-    let code = $('#currency-code').val();
+  $('#formOne').submit(function(event)  {
+    event.preventDefault();
+    let code = $('#code').val();
+    
+    console.log(code);
     clearFields();
     ExchangeRate.getRate(code)
       .then(function(response)  {
