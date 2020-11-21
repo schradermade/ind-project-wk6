@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <title>Currency Exchange Rate</title>
 </head>
 <body>
   <div class="container">
-    <form id="form-one">
-      <label for="amount">Amount of Money to exchange:</label>
-      <input id="amount" type="text">
-      <select id="currency">
+    <form id="formOne">
+      <div class="form-group">
+        <label for="amount">Amount of Money to exchange:</label>
+        <input id="amount" type="text">
+      </div>
+      <br>
+      <div class="form-group">
+      <select id="code">
         <p>Convert to:</p>
         <option value="CHF">Swiss franc</option>
         <option value="CAD">Canadian dollars</option>
@@ -16,9 +21,13 @@
         <option value="CNY">Chinese yuan</option>
         <option value="BTC">Bitcoin</option>
       </select>
-      <button type="submit">Submit</button>
+      </div>
+      <br>
+      <button class="btn-success">Exchange currency</button>
     </form>
-    <div id="showExchange"></div>
+    <br>
+    <div id="show-errors"></div>
+    <div id="show-exchange"></div>
   </div>
 </body>
 </html>

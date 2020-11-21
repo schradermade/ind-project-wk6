@@ -11,14 +11,16 @@ function clearFields()  {
 }
 
 function getExchange(response, code, amount)  {
-  let convertCode = `${response.conversion_rates}.${code}`;
-  console.log(convertCode);
-  let convertAmount = `${convertCode} * ${amount}`;
-  console.log(convertAmount);
   if (response.conversion_rates)  {
-    alert("it worked");
-    console.log(response);
-    $("#show-exchange").text(`Your $${amount} U.S. Dollars converts to ${convertAmount} ${}`);
+    code;
+    //let currCode = `response.conversion_rates.${code}`;
+    let code1 = `response.${conversion_rates}.${code}`;
+    console.log(code1);
+    //console.log(response.`${conversion_rates} ${code}`);
+    console.log(response.conversion_rates.CAD);
+    //let convertAmount = currCode;
+    //console.log(response.conversion_rates.CAD);
+    $("#show-exchange").text(`Your $${amount} U.S. Dollars converts to  `);
   } else  {
     $('#show-errors').text(`There was an error: ${response.message}`);
   }
@@ -27,12 +29,11 @@ function getExchange(response, code, amount)  {
 $(document).ready(function()  {
   $('#formOne').submit(function(event)  {
     event.preventDefault();
-    
+    let USD = "USD";
     let code = $('#code').val();
     let amount = $('#amount').val();
-    console.log(code);
     clearFields();
-    ExchangeRate.getRate("USD")
+    ExchangeRate.getRate(USD)
       .then(function(response)  {
         getExchange(response, code, amount);
       });
