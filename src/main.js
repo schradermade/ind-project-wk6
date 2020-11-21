@@ -10,14 +10,19 @@ function clearFields()  {
   $('#show-exchange').val("");
 }
 
-function getExchange(response, code, amount)  {
+function convertCode(code)  {
+  let convCode = `response.conversion_chart.${code}`;
+  return convCode;
+}
+
+function getExchange(response, convCode, amount)  {
   if (response.conversion_rates)  {
-    code;
+    console.log(`this will ${convCode}`);
     //let currCode = `response.conversion_rates.${code}`;
-    let code1 = `response.${conversion_rates}.${code}`;
+    let code1 = response.conversion_rates;
     console.log(code1);
     //console.log(response.`${conversion_rates} ${code}`);
-    console.log(response.conversion_rates.CAD);
+    //console.log(response.conversion_rates.CAD);
     //let convertAmount = currCode;
     //console.log(response.conversion_rates.CAD);
     $("#show-exchange").text(`Your $${amount} U.S. Dollars converts to  `);
@@ -36,6 +41,7 @@ $(document).ready(function()  {
     ExchangeRate.getRate(USD)
       .then(function(response)  {
         getExchange(response, code, amount);
+        convertCode(code);
       });
   });
 });
