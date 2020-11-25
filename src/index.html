@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  
+
   <title>Currency Exchange Rate</title>
 </head>
 <body>
   <div class="container">
     <form id="formOne">
+      <p>Please enter an amount below in U.S.D. currency, and select one of 5 currencies to convert into:</p>
       <div class="form-group">
         <label for="amount">Amount of Money to exchange:</label>
         <input id="amount" type="text">
@@ -19,7 +21,7 @@
         <option value="CAD">Canadian dollars</option>
         <option value="MXN">Mexican peso</option>
         <option value="CNY">Chinese yuan</option>
-        <option value="BTC">Bitcoin</option>
+        <option value="EUR">Euro</option>
       </select>
       </div>
       <br>
@@ -27,7 +29,11 @@
     </form>
     <br>
     <div id="show-errors"></div>
-    <div id="show-exchange"></div>
+    <div id="showString"></div>
+    <div id="show-CAD"></div>
+    <div id="show-MXN"></div>
+    <div id="show-CNY"></div>
+    <div id="show-BTC"></div>
   </div>
 </body>
 </html>
