@@ -1,75 +1,76 @@
-# _Mr. Roboger's Neighborhood_
+# _Currency Exchanger Application_
 
-#### _Web form to transform user's inputted number, 10.30.2020_
+#### _Application to accept input of an amount of money in U.S.D., and will output amount converted into a foreign currency selected by user, 11.20.2020_
 
 #### By _**Nathan Schrader**_
 
 ## Description
+This web application was created as an independent project in Week 6 of Epicodus, a fulltime coding school that is 6 months long. In this project I implement a currency exchange API from `https://www.exchangerate-api.com`, then code business logic in JavaScript that allows a user to input an amount of money in U.S. Dollars and convert it into one of 5 different currencies.
 
-_This web application will take a number from a user and return a range of numbers from 0 to the user inputted number with the following exceptions:_
-    *   Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"
-    *   Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"
-    *   Numbers that contain a 3: all digits are replaced (all digits) with "Won't you be my neighbor?"
-    
-These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third. So, for example:
-    *   The number 13 should be replaced with "Won't you be my neighbor?"
-    *   The number 21 should be replaced with "Boop"
-    *   The number 32 should be replaced with "Won't you be my neighbor?"
-    
-A user should be able to enter a new number and see new reults over and over again.
+In addition, the application makes use of the `Date()` constructor function to include today's date and the current time.
 
-**Example:** if a user inputs a inputs a **5**, the program should display a list of values: **"0", "Beep!", "Boop", "Won't you be my neighbor?", 4, 5** 
+Future iterations of this application will include all currencies availabe at exchangerate-api.com.
 
-## Setup/Installation Requirements
+### Example User Input/Output
+| Input: | Output: |
+|:------| :-------- |
+| "`25`" and selects "`Swiss Franc`" | **"Your 25 U.S. Dollars is 22.66 Swiss Franc (CHF) with an exchange rate of 0.9064 as of Sun Nov 29 2020 20:18:09 GMT-0800 (Pacific Standard Time)."** |
+| "`25`" and selects "`Canadian Dollars`" | **"Your 25 U.S. Dollars is 32.48 Canadian Dollars (CAD) with an exchange rate of 1.2992 as of Sun Nov 29 2020 20:20:49 GMT-0800 (Pacific Standard Time)."** |
+| "`25`" and selects "`Mexican peso`" | **"Your 25 U.S. Dollars is 501.16 Mexican peso (MXN) with an exchange rate of 20.0465 as of Sun Nov 29 2020 20:49:48 GMT-0800 (Pacific Standard Time).."** |
+| "`25`" and selects "`Chinese yuan`" | **"Your 25 U.S. Dollars is 501.16 Mexican peso (MXN) with an exchange rate of 20.0465 as of Sun Nov 29 2020 20:22:04 GMT-0800 (Pacific Standard Time)."** |
+| "`25`" and selects "`Euro`" | **"Your 25 U.S. Dollars is 20.9375 Euro (EUR) with an exchange rate of 0.8375 as of Sun Nov 29 2020 20:22:29 GMT-0800 (Pacific Standard Time)."** |
 
-* _Clone this repository_
-* _Open a simple HTTP server in the top level of the cloned directory. For a mac, run the following commanad in your terminal:_
-    `python -m SimpleHTTPServer`
-* _Then open your web browser of choice to localhost:8800_
+## Setup/Installation
+### Requirements:
 
-## Specs
+* Internet Browser
+* Code editor if you want to explore the code
 
-1.
-Describe: userInput
-Test: "Takes in user input, converts to integer and stores it in a variable"
-Expect(userInput("5")).toEqual([5])
+### Download:
 
-2.
-Describe: createArray
-Test: "Creates an array of integers ranging from 0 to the user's inputed integer"
-Expect(createArray("5")).toEqual([0, 1, 2, 3, 4, 5]);
+1. Download this repository by clicking the green 'Code' button and selecting "Download Zip"
+2. Unzip the file to extract files to your local drive. 
+3. Create a new file in the root directory named `.env`. This is where you will put the API KEY you get.
+4. To get correct API KEY go to https://www.exchangerate-api.com/, and:
+    * Input your email in the text box next to blue `"Get Free Key"` button, then click `"Get Free Key"` button.
+    * You will then be prompted to create a simple and free account by inputting a **First Name** and **Password**, then check the `You agree to our Terms & Conditions of Use` box. Then click `"Create Account and Get API Key!"` button.
+    * In the middle of the first page it brings you to will be an API KEY in bold, titled `"Your API Key"`. Copy just the key itself, and paste it into your newly created `.env` file, like so: `API_KEY=INSERT API KEY HERE` - DO NOT PUT QUOTES AROUND THE API KEY, ONLY INSERT THE KEY NUMBERS/LETTERS.
+5. Save all files to complete your changes.
+6. In your Terminal, navigate to the root directy where the project exists and
+install webpack by typing:
+`npm install`
+7. Open the `index.html` file in your browser.
 
-3.
-Describe: createString
-Test: "Takes array of integers and converts them to an array of strings"
-Expect(createString([0, 1, 2, 3, 4, 5])).toEqual(["0", "1", "2", "3", "4", "5"])
-
-4.
-Describe: transformString
-Test: "Transforms string based on instructed logic given in Project guidelines"
-Expect(transformString(["0", "1", "2", "3", "4", "5"])).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor?", "4", "5"])
-
+### Terminal:
+1. Open command terminal on local device
+2. Navigate to the directory where you want respository to save to
+3. Copy repository link by clicking on the green "Code" button and clicking 'clipboard' icon
+4. Back in the terminal, type `git clone {Repository-URL-here}`
+5. In your code editor program, open the newly created repository directory
+6. Follow steps **3**, **4** and **5** above under the **Download** section above to get and implement API KEY. 
+6. Right click on the `index.html` file and select "Copy file path"
+7. Paste the link into your web browser window
 
 ## Known Bugs
-
-No known bugs at this time.
+No known bugs at this time. If you find a bug, let me know via email!
 
 ## Support and contact details
-
-_If you run into any issues or have concerns, please reach out at **nathanschrader@icloud.com**_
+_If you run into any issues or have concerns, please reach out at ``nathanschrader@icloud.com``
 
 ## Technologies Used
+* HTML
+* CSS
+* Bootstrap
+* JavaScript - ES6
+* jQuery
+* Test Driven Development
+* Visual Studio Code
+* API endpoints
+* Git
+* Github
 
-**HTML
-CSS
-Bootstrap
-JavaScript
-jQuery
-Visual Studio Code
-Github**
 
 ## Legal
-
 Copyright (c) 2020 **_Nathan Schrader_**
 
 This software is licensed under the MIT license.
