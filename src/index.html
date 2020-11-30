@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-
   <title>Currency Exchange Rate</title>
 </head>
 <body>
@@ -11,18 +9,17 @@
       <p>Please enter an amount below in U.S.D. currency, and select one of 5 currencies to convert into:</p>
       <div class="form-group">
         <label for="amount">Amount of Money to exchange:</label>
-        <input id="amount" type="text">
+        <input id="amount" type="text" placeholder="Amount To Convert">
       </div>
       <br>
       <div class="form-group">
-      <select id="code">
-        <p>Convert to:</p>
-        <option value="CHF">Swiss franc</option>
-        <option value="CAD">Canadian dollars</option>
-        <option value="MXN">Mexican peso</option>
-        <option value="CNY">Chinese yuan</option>
-        <option value="EUR">Euro</option>
-      </select>
+        <select id="code" placeholder="Convert to..">
+          <option value="CHF">Swiss franc</option>
+          <option value="CAD">Canadian dollars</option>
+          <option value="MXN">Mexican peso</option>
+          <option value="CNY">Chinese yuan</option>
+          <option value="EUR">Euro</option>
+        </select>
       </div>
       <br>
       <button class="btn-success">Exchange currency</button>
@@ -30,10 +27,7 @@
     <br>
     <div id="show-errors"></div>
     <div id="showString"></div>
-    <div id="show-CAD"></div>
-    <div id="show-MXN"></div>
-    <div id="show-CNY"></div>
-    <div id="show-BTC"></div>
+    <div id="noCode"></div>
   </div>
 </body>
 </html>

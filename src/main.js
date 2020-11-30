@@ -38,7 +38,7 @@ function getExchange(response, code, amount, outputString)  {
     else if (code !== "CHF" | "CAD" | "MXN" | "CNY" | "EUR" )  {
       outputString = "Sorry, that currency does not exist in our system.";
     } else {
-      //$('#show-errors').text(`There was an error: ${response.message}`);
+      $('#show-errors').text(`There was an error: ${response.message}`);
     } 
   }
   document.getElementById("showString").innerHTML = outputString;
@@ -54,7 +54,6 @@ $(document).ready(function()  {
     ExchangeRate.getRate()
       .then(function(response)  {
         getExchange(response, code, amount, outputString);
-        
       });
   });
 });
